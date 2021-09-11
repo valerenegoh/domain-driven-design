@@ -1,6 +1,6 @@
 package com.thoughtworks.ddd.shopping.domain;
 
-import com.thoughtworks.ddd.shopping.adapter.Publisher;
+import com.thoughtworks.ddd.shopping.adapter.producer.CartPublisher;
 import com.thoughtworks.ddd.shopping.domain.event.CartCheckedOutEvent;
 
 import java.util.*;
@@ -27,7 +27,7 @@ public class Cart {
     }
 
     public void checkout() {
-        Publisher.publish(new CartCheckedOutEvent(items));
+        CartPublisher.publish(new CartCheckedOutEvent(items));
         this.isCheckedOut = true;
     }
 
