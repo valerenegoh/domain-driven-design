@@ -12,6 +12,14 @@ public class Price {
         this.value = value;
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
