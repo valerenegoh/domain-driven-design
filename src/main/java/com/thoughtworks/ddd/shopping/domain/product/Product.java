@@ -8,4 +8,6 @@ public abstract class Product {
     protected Product(Price price) {
         this.price = price;
     }
+
+
 }

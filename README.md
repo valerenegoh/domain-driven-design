@@ -22,5 +22,7 @@ cart1.equals(cart2)  should be false
 - Problem#7: See the Price of Product before adding to a Cart
 `Notes: Java.Util.Currency ==> Currency.getInstance("USD")`
 `new Product(Price(...))`
-
+- Problem #8 -  As a Business User I will like price my product 10% below competitor price (competitor price is available for product).
+`Assume that HashMap of Competitor Product Name and price is available`
+`Product("name", Price())`
 
