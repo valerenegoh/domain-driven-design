@@ -22,7 +22,7 @@ class CartTest {
     void shouldAddItemToCart() {
         Cart cart = new Cart();
 
-        cart.add(new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000))), 1));
+        cart.add(new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000)), 800), 1));
 
         assertEquals(cart.getItems().size(), 1);
     }
@@ -30,7 +30,7 @@ class CartTest {
     @Test
     void shouldRemoveProduct() {
         Cart cart = new Cart();
-        Item item = new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000))), 1);
+        Item item = new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000)), 800), 1);
 
         cart.add(item);
         cart.remove(item);
@@ -41,7 +41,7 @@ class CartTest {
     @Test
     void shouldHaveHistoryOfActionsPerformedOnCart() {
         Cart cart = new Cart();
-        Item item = new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000))), 1);
+        Item item = new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000)), 800), 1);
 
         cart.add(item);
         cart.remove(item);
@@ -52,7 +52,7 @@ class CartTest {
 
     @Test
     void shouldDifferentiateTwoCartsWithEqualItems() {
-        Item item = new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000))), 1);
+        Item item = new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000)), 800), 1);
 
         Cart cart1 = new Cart();
         cart1.add(item);

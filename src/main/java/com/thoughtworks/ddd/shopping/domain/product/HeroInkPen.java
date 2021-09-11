@@ -3,8 +3,8 @@ package com.thoughtworks.ddd.shopping.domain.product;
 import com.thoughtworks.ddd.shopping.domain.Price;
 
 public class HeroInkPen extends Product {
-    public HeroInkPen(final Price price) {
-        super(price);
+    public HeroInkPen(final Price price, final double weight) {
+        super(price, weight);
     }
 
     @Override

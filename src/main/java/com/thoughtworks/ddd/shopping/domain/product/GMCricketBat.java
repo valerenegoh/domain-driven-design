@@ -3,8 +3,8 @@ package com.thoughtworks.ddd.shopping.domain.product;
 import com.thoughtworks.ddd.shopping.domain.Price;
 
 public class GMCricketBat extends Product {
-    public GMCricketBat(final Price price) {
-        super(price);
+    public GMCricketBat(final Price price, final double weight) {
+        super(price, weight);
     }
 
     @Override

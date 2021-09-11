@@ -3,8 +3,8 @@ package com.thoughtworks.ddd.shopping.domain.product;
 import com.thoughtworks.ddd.shopping.domain.Price;
 
 public class IPadPro extends Product {
-    public IPadPro(final Price price) {
-        super(price);
+    public IPadPro(final Price price, final double weight) {
+        super(price, weight);
     }
 
     @Override
