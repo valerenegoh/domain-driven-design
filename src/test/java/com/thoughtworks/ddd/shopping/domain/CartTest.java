@@ -1,5 +1,6 @@
 package com.thoughtworks.ddd.shopping.domain;
 
+import com.thoughtworks.ddd.shopping.adapter.MessageBus;
 import com.thoughtworks.ddd.shopping.domain.product.IPadPro;
 import org.junit.jupiter.api.Test;
 
@@ -60,5 +61,12 @@ class CartTest {
         cart2.add(item);
 
         assertNotEquals(cart1, cart2);
+    }
+
+    @Test
+    void shouldProduceCartCheckedOutEventInEventBusWhenCartCheckoutActionOccurs() {
+        Cart cart = new Cart();
+        cart.checkout();
+        assertEquals(MessageBus.listOfEvents.size(),1);
     }
 }
