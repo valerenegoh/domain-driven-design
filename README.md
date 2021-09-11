@@ -25,4 +25,5 @@ cart1.equals(cart2)  should be false
 - Problem #8 -  As a Business User I will like price my product 10% below competitor price (competitor price is available for product).
 `Assume that HashMap of Competitor Product Name and price is available`
 `Product("name", Price())`
+- Problem #9  Create Order( with Products) when Cart is checked out. Also, Mark cart as checked out 
 

@@ -1,15 +1,19 @@
 package com.thoughtworks.ddd.shopping.domain;
 
+import com.thoughtworks.ddd.shopping.adapter.Publisher;
+import com.thoughtworks.ddd.shopping.domain.event.CartCheckedOutEvent;
+
 import java.util.*;
 
 public class Cart {
-
     private final List<Item> items;
     private final Map<Action, Item> history;
+    private Boolean isCheckedOut;
 
     public Cart() {
         this.items = new ArrayList<>();
-        history = new HashMap<>();
+        this.history = new HashMap<>();
+        this.isCheckedOut = false;
     }
 
     public void add(final Item item) {
@@ -20,6 +24,11 @@ public class Cart {
     public void remove(final Item item) {
         items.remove(item);
         history.put(Action.DELETE, item);
+    }
+
+    public void checkout() {
+        Publisher.publish(new CartCheckedOutEvent(items));
+        this.isCheckedOut = true;
     }
 
     public List<Item> getItems() {

@@ -1,5 +1,6 @@
 package com.thoughtworks.ddd.shopping.application;
 
+import com.thoughtworks.ddd.shopping.adapter.Consumer;
 import com.thoughtworks.ddd.shopping.domain.*;
 import com.thoughtworks.ddd.shopping.domain.product.GMCricketBat;
 import com.thoughtworks.ddd.shopping.domain.product.HeroInkPen;
@@ -14,5 +15,7 @@ public class Application {
         cart.add(new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000))), 1));
         cart.add(new Item(new HeroInkPen(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(1))), 1));
         cart.add(new Item(new GMCricketBat(new Price(Currency.getInstance("SGD"), BigDecimal.valueOf(100))), 2));
+        cart.checkout();
+        Order order = new Order(Consumer.consume().getItems());
     }
 }
