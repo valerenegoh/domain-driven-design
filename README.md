@@ -19,5 +19,8 @@ cart1.add(item1)
 cart2.add(item2)
 cart1.equals(cart2)  should be false
 ```
+- Problem#7: See the Price of Product before adding to a Cart
+`Notes: Java.Util.Currency ==> Currency.getInstance("USD")`
+`new Product(Price(...))`
 
 

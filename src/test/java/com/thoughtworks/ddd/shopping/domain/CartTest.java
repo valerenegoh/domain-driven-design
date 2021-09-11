@@ -3,6 +3,9 @@ package com.thoughtworks.ddd.shopping.domain;
 import com.thoughtworks.ddd.shopping.domain.product.IPadPro;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+import java.util.Currency;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CartTest {
@@ -17,7 +20,7 @@ class CartTest {
     void shouldAddItemToCart() {
         Cart cart = new Cart();
 
-        cart.add(new Item(new IPadPro(), 1));
+        cart.add(new Item(new IPadPro(new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000))), 1));
 
         assertEquals(cart.getItems().size(), 1);
     }
@@ -25,7 +28,8 @@ class CartTest {
     @Test
     void shouldRemoveProduct() {
         Cart cart = new Cart();
-        IPadPro product = new IPadPro();
+        Price price = new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000));
+        IPadPro product = new IPadPro(price);
         Item item = new Item(product, 1);
 
         cart.add(item);
@@ -37,7 +41,8 @@ class CartTest {
     @Test
     void shouldHaveHistoryOfActionsPerformedOnCart() {
         Cart cart = new Cart();
-        IPadPro product = new IPadPro();
+        Price price = new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000));
+        IPadPro product = new IPadPro(price);
         Item item = new Item(product, 1);
 
         cart.add(item);
@@ -49,7 +54,8 @@ class CartTest {
 
     @Test
     void shouldDifferentiateTwoCartsWithEqualItems() {
-        IPadPro product = new IPadPro();
+        Price price = new Price(Currency.getInstance("USD"), BigDecimal.valueOf(2000));
+        IPadPro product = new IPadPro(price);
         Item item = new Item(product, 1);
 
         Cart cart1 = new Cart();
