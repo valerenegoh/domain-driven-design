@@ -1,10 +1,10 @@
 package com.thoughtworks.ddd.shopping.adapter;
 
-import com.thoughtworks.ddd.shopping.domain.event.CartCheckedOutEvent;
+import com.thoughtworks.ddd.shopping.domain.event.Event;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class MessageBus {
-    public static List<CartCheckedOutEvent> checkedOutEventArrayList = new ArrayList<>();
+    public static List<Event> listOfEvents = new ArrayList<>();
 }

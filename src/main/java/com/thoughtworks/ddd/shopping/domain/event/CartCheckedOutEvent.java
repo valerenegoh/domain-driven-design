@@ -4,7 +4,7 @@ import com.thoughtworks.ddd.shopping.domain.Item;
 
 import java.util.List;
 
-public class CartCheckedOutEvent {
+public class CartCheckedOutEvent extends Event{
     private final List<Item> items;
 
     public CartCheckedOutEvent(List<Item> items) {
